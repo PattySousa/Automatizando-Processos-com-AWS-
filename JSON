@@ -1,0 +1,29 @@
+{ 
+  "Versão" :  "2012-10-17" , 
+  "Id" :  "__default_policy_ID" , 
+  "Declaração" :  [ 
+    { 
+      "Sid" :  "__owner_statement" , 
+      "Efeito" :  "Permitir" , 
+      "Principal" :  { 
+        "AWS" :  "arn:aws:iam::(IDcom12digitos):root" 
+      } , 
+      "Ação" :  "SQS:*" , 
+      "Recurso" :  "arn:aws:sqs:us-west-1:(IDAWScom12digitos):minha-fila-principal-lab-(nomesobrenome)-aaaammdd" 
+      } , 
+      { 
+       "Sid" :  "Permitir-SNS-SendMessage" , 
+       "Efeito" :  "Permitir" , 
+       "Principal" :  { 
+        "Serviço" :  "sns.amazonaws.com" 
+       } , 
+       "Ação" :  "sqs:SendMessage" , 
+       "Recurso" :  "arn:aws:sqs:us-west-1:(IDAWScom12digitos):minha-fila-principal-lab-(nomesobrenome)-aaaammdd" , 
+       "Condição" :  { 
+        "ArnEquals" :  { 
+         "aws:SourceArn" :  "arn:aws:sns:us-west-1:(IDAWScom12digitos):meu-topico-lab-(nomesobrenome)-aaaammdd" 
+       } 
+     } 
+   } 
+ ] 
+}

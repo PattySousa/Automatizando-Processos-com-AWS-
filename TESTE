@@ -1,0 +1,6 @@
+ { 
+  "evento" :  "pedido_criado" , 
+  "pedido_id" :  "12345" , 
+  "cliente_id" :  "9876" , 
+  "timestamp" :  "2024-03-15T10:00:00Z" 
+}
